@@ -4,9 +4,8 @@ public class Matrix {
     private float[][] array;
     private byte numOfRows;
     private byte numOfColumns;
-    public void setMatrix(int numOfRows, int numOfColumns) {
-        array = new float[numOfRows][numOfColumns];
-    }
+
+
     public void addition(float[][] matrix) {
         if(matrix[0].length == array[0].length && matrix.length == array.length) {
             for(int i = 0; i < matrix.length; ++i) {
@@ -18,7 +17,20 @@ public class Matrix {
             System.out.println("Size of your matrix unequal to the previous");
         }
     }
+
     public float[][] getMatrix() {
         return array;
+    }
+    public void setNumOfRows(byte numOfRows) {
+        this.numOfRows = numOfRows;
+    }
+    public byte getNumOfRows() {
+        return numOfRows;
+    }
+    public void setNumOfColumns(byte numOfColumns) {
+        this.numOfColumns = numOfColumns;
+    }
+    public byte getNumOfColumns() {
+        return numOfColumns;
     }
 }
