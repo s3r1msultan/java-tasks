@@ -1,4 +1,4 @@
 .idea
 */.idea
 */out
-**/Assignment[1-10].iml
+/Assignment[*].iml
