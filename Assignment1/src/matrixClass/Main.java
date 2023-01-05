@@ -11,5 +11,7 @@ public class Main {
 //        secondMatrix.printMatrix();
         secondMatrix.addition(matrix.getMatrix());
         secondMatrix.printMatrix();
+        matrix.multiplication(2.3f);
+        matrix.printMatrix();
     }
 }
