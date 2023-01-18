@@ -1,19 +1,37 @@
-package libraryClass;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Main {
+public class Main
+{
+
     public static void main(String[] args) {
-        Book first = new Book("Fahrenheit 451", "Ray Bradbury");
-        Book second = new Book("1984", "George Orwell");
-        Book third = new Book("Brave New World", "Aldous Huxley");
-        Book forth = new Book("Grokking Algorithms", "Aditya Bhargava");
-        LibraryReader Andrey = new LibraryReader("Kolesnikov Andrey", 2314, "SE", 290504, "+7704521234");
 
-        Andrey.takeBook(5);
-        Andrey.takeBook("Fahrenheit 451", "1984", "Brave New World", "Grokking Algorithms");
-        Andrey.takeBook(first, second, third, forth);
+        Scanner scan = new Scanner(System.in);
+        int numElements = scan.nextInt();
+        ArrayList<Integer> list = new ArrayList<>();
 
-        Andrey.returnBook(5);
-        Andrey.returnBook("Fahrenheit 451", "1984", "Brave New World", "Grokking Algorithms");
-        Andrey.returnBook(first, second, third, forth);
+        for(int i = 0; i < numElements; ++i){
+            list.add(scan.nextInt());
+        }
+
+        int numQueries = scan.nextInt();
+
+        for(int i = 0; i < numQueries; ++i){
+
+            String queryType = scan.nextLine();
+
+            if(queryType.equals("Insert")){
+                String[] queryArray = scan.nextLine().split(" ");
+                list.add(Integer.parseInt(queryArray[0]), Integer.parseInt(queryArray[1]));
+            } else if(queryType.equals("Delete")){
+                int removeIndex = scan.nextInt();
+                list.remove(removeIndex);
+            }
+
+        }
+
+        for(int i = 0; i < list.size(); ++i) {
+            System.out.print(list.get(i) + " ");
+        }
     }
 }

@@ -8,7 +8,7 @@ public class Person {
         System.out.println(getFullName() + "is moving");
     }
     public void talk() {
-        System.out.println(getFullName() + "is talk");
+        System.out.println(getFullName() + "is talking");
     }
 
     public Person() {
