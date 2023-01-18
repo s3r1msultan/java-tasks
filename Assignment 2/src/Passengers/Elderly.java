@@ -1,8 +1,8 @@
 package Passengers;
 
 public class Elderly extends Passenger{
-    public Elderly(int age, String firstName, String lastName, String ticketNumber) {
-        super(age, firstName, lastName, ticketNumber);
+    public Elderly( String firstName, String lastName, int age, String ticketNumber) {
+        super(firstName, lastName, age, ticketNumber);
         discount = 25;
     }
 }

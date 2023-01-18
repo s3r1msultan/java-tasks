@@ -7,7 +7,7 @@ public class Passenger {
     private String ticketNumber;
     protected int discount;
 
-    public Passenger(int age, String firstName, String lastName, String ticketNumber) {
+    public Passenger(String firstName, String lastName, int age, String ticketNumber) {
         this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -16,6 +16,13 @@ public class Passenger {
 
     public float ticketPrice(int price) {
         return price*(1 - (float) discount/100);
+    }
+
+    public String getInfo() {
+        return "Firstname: " + firstName + '\n' +
+                "Lastname: " + lastName + '\n' +
+                "Age: " + age + '\n' +
+                "Ticket number: " + ticketNumber + '\n';
     }
 
     public int getAge() {

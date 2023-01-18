@@ -1,8 +1,8 @@
 package Passengers;
 
 public class Invalid extends Passenger{
-    public Invalid(int age, String firstName, String lastName, String ticketNumber) {
-        super(age, firstName, lastName, ticketNumber);
+    public Invalid(String firstName, String lastName, int age, String ticketNumber) {
+        super(firstName, lastName, age, ticketNumber);
         discount = 50;
     }
 }

@@ -1,3 +1,5 @@
+import Passengers.ActionsWithPassenger;
+import Wagons.ActionsWithWagon;
 import Wagons.Coupe;
 import Wagons.ReservedSeat;
 import Wagons.Wagon;
@@ -18,7 +20,6 @@ public class Main {
         }
 
 
-
         int menuNum;
         while(true) {
             menu.initialCommands();
@@ -28,21 +29,56 @@ public class Main {
                 break;
             } else if (menuNum == 1) {
                 Verification verification = new Verification();
-                while(verification.isValidManager()) {
+                boolean answer = verification.isValidManager();
+                ActionsWithWagon actionsWithWagon = new ActionsWithWagon();
+                while(answer) {
                     menu.managerCommands();
                     menuNum = cin.nextInt();
                     if (menuNum == 0) {
                         break;
+
+
+
                     } else if(menuNum == 1) {
                         while(true) {
+                            ActionsWithPassenger actionsWithPassenger = new ActionsWithPassenger();
                             menu.wagonEditingCommands();
                             menuNum = cin.nextInt();
                             if(menuNum == 0) {
                                 break;
+                            } else if (menuNum == 1) {
+                                actionsWithPassenger.adding(train, cin);
+                            } else if (menuNum == 2) {
+                                actionsWithPassenger.removing(train, cin);
+                            } else if (menuNum == 3) {
+                                while(true) {
+                                    menu.passengerInfoEditingCommands();
+                                    menuNum = cin.nextInt();
+                                    if (menuNum == 0) {
+                                        break;
+                                    } else if (menuNum == 1) {
+                                        actionsWithPassenger.changingFirstName(train, cin);
+                                    } else if (menuNum == 2) {
+                                        actionsWithPassenger.changingLastName(train, cin);
+                                    } else if (menuNum == 3) {
+                                        actionsWithPassenger.changingAge(train, cin);
+                                    }
+                                }
                             }
                         }
-                    } else if(menuNum == 2) {
 
+
+                    // Adding a wagon
+                    } else if(menuNum == 2) {
+                        actionsWithWagon.adding(train, cin);
+
+                    // Removing a wagon
+                    } else if(menuNum == 3) {
+                        actionsWithWagon.removing(train, cin);
+
+                    // Info about a wagon
+                    } else if(menuNum == 4) {
+                        actionsWithWagon.info(train, cin);
                     }
                 }
             } else if (menuNum == 2) {
@@ -52,4 +88,6 @@ public class Main {
         }
 
     }
+
+
 }

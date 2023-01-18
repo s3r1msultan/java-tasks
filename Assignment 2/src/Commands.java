@@ -15,7 +15,7 @@ public class Commands {
         System.out.println("1 - Edit a wagon");
         System.out.println("2 - Add a wagon");
         System.out.println("3 - Remove a wagon");
-        System.out.println("4 - Get information about wagon");
+        System.out.println("4 - Get information about a wagon");
         System.out.println("0 - Go back");
         System.out.println("####################################");
     }
@@ -38,7 +38,6 @@ public class Commands {
         System.out.println("1 - Change the name");
         System.out.println("2 - Changer the surname");
         System.out.println("3 - Change the age");
-        System.out.println("4 - Change the ticket number");
         System.out.println("0 - Go back");
         System.out.println("####################################");
     }

@@ -9,9 +9,9 @@ public class Verification {
         System.out.println("####################################");
         System.out.println("Enter login and password:");
         System.out.print("Login: ");
-        String login = cin.nextLine();
+        String login = cin.next().trim();
         System.out.print("Password: ");
-        String password = cin.nextLine();
+        String password = cin.next().trim();
         if (password.equals(PASS) && login.equals(LOGIN)) {
             System.out.println("####################################");
             return true;
@@ -20,6 +20,5 @@ public class Verification {
         System.out.println("You have entered wrong login or password");
         System.out.println("####################################");
         return false;
-
     }
 }

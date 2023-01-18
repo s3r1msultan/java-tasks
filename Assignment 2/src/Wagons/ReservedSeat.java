@@ -4,6 +4,6 @@ public class ReservedSeat extends Wagon{
     public ReservedSeat() {
         price = 7500;
         maxNumberOfPassengers = 55;
-        nameOfWagon = "Reserved Seat Wagon";
+        typeOfWagon = "Reserved Seat Wagon";
     }
 }
