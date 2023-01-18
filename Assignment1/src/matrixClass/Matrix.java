@@ -21,9 +21,9 @@ public class Matrix {
     }
 
     public void setMatrix(float[][] matrix) {
-        this.matrix = new float[matrix.length][matrix[0].length];
         numOfRows = matrix.length;
         numOfColumns = matrix[0].length;
+        this.matrix = new float[numOfRows][numOfColumns];
         for(int i = 0; i < matrix.length; ++i) {
             for(int j = 0; j < matrix[0].length; ++j) {
                 this.matrix[i][j] = matrix[i][j];
@@ -42,11 +42,13 @@ public class Matrix {
             System.out.println("Size of your matrix unequal to the previous" + '\n');
         }
     }
-
-    public float[][] getMatrix() {
-        return matrix;
+    public void multiplication(float num) {
+        for(int i = 0; i < matrix.length; ++i) {
+            for(int j = 0; j < matrix[0].length; ++j) {
+                matrix[i][j] *= num;
+            }
+        }
     }
-
     public void printMatrix() {
         System.out.println("===========================");
         for(int i = 0; i < numOfRows; ++i) {
@@ -56,6 +58,10 @@ public class Matrix {
             System.out.println();
         }
         System.out.println("===========================");
+    }
+
+    public float[][] getMatrix() {
+        return matrix;
     }
 
     public int getNumOfRows() {
