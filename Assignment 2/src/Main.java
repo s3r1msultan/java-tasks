@@ -82,12 +82,51 @@ public class Main {
                     }
                 }
             } else if (menuNum == 2) {
-                menu.customerCommands();
-                break;
+                while(true) {
+                    menu.customerCommands();
+                    menuNum = cin.nextInt();
+                    if (menuNum == 0) {
+                        break;
+                    } else if (menuNum == 1) {
+                        System.out.println("In which wagon is your seat?");
+                        System.out.println("Max amount of wagons in the train is " + train.size());
+                        int wagonNumber = cin.nextInt();
+                        if(wagonNumber > 0 && wagonNumber <= train.size()) {
+                            System.out.print("Your ticket number in ticket: ");
+                            String ticketNum = cin.next().trim();
+                            for (int i = 0; i < train.get(wagonNumber-1).getPassengers().size(); ++i) {
+                                if (train.get(wagonNumber-1).getPassengers().get(i).getTicketNumber().equals(ticketNum)) {
+                                    train.get(wagonNumber-1).getInfo();
+                                    train.get(wagonNumber-1).getPassengers().get(i).getInfo();
+                                    break;
+                                }
+                            }
+                        } else {
+                            System.out.println("The number is out of range");
+                            System.out.println("Please enter a number between 1 and " + train.size());
+                        }
+
+                    } else if (menuNum == 2) {
+                        System.out.println("In which wagon is your seat?");
+                        System.out.println("Max amount of wagons in the train is " + train.size());
+                        int wagonNumber = cin.nextInt();
+                        if(wagonNumber > 0 && wagonNumber <= train.size()) {
+                            System.out.print("Your ticket number in ticket: ");
+                            String ticketNum = cin.next().trim();
+                            for (int i = 0; i < train.get(wagonNumber-1).getPassengers().size(); ++i) {
+                                if (train.get(wagonNumber-1).getPassengers().get(i).getTicketNumber().equals(ticketNum)) {
+                                    train.get(wagonNumber-1).getPassengers().remove(i);
+                                    break;
+                                }
+                            }
+                        } else {
+                            System.out.println("The number is out of range");
+                            System.out.println("Please enter a number between 1 and " + train.size());
+                        }
+                    }
+                }
             }
         }
 
     }
-
-
 }
