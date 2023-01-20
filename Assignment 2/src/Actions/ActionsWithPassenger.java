@@ -1,130 +1,68 @@
 package Actions;
 
-import Passengers.*;
+import DataBase.DBHandler;
 import Wagons.Wagon;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ActionsWithPassenger {
-    public void adding(ArrayList<Wagon> train, Scanner cin) {
-        System.out.println("Where do you want to add the passenger?");
-        System.out.println("Max amount of wagons in the train is " + train.size());
-        int wagonNumber = cin.nextInt();
-        if(wagonNumber > 0 && wagonNumber <= train.size()) {
-            System.out.print("Firstname: ");
-            String firstName = cin.next().trim();
-            System.out.print("Lastname: ");
-            String lastName = cin.next().trim();
-            System.out.print("Age: ");
-            int age = cin.nextInt();
-            System.out.println("Do you have a student card?(Yes or No)");
-            boolean isStudent = cin.next().trim().toLowerCase().equals("yes");
-            System.out.println("Do you have a disability?(Yes or No)");
-            boolean isInvalid = cin.next().trim().toLowerCase().equals("yes");
-            String ticket = wagonNumber + "" + train.get(wagonNumber-1).getPassengers().size();
-            if (isInvalid) {
-                Disabled disabled = new Disabled(firstName, lastName, age, ticket);
-                train.get(wagonNumber-1).getPassengers().add(disabled);
-            } else if (isStudent) {
-                Student student = new Student(firstName, lastName, age, ticket);
-                train.get(wagonNumber-1).getPassengers().add(student);
-            } else if(age >= 60) {
-                Elderly elderly = new Elderly(firstName, lastName, age, ticket);
-                train.get(wagonNumber-1).getPassengers().add(elderly);
-            } else if(age < 16) {
-                Child child = new Child(firstName, lastName, age, ticket);
-                train.get(wagonNumber-1).getPassengers().add(child);
-            } else {
-                Adult adult = new Adult(firstName, lastName, age, ticket);
-                train.get(wagonNumber-1).getPassengers().add(adult);
-            }
-
-            System.out.println("You have successfully added the passenger!!!");
-        } else {
-            System.out.println("The number is out of range");
-            System.out.println("Please enter a number between 1 and " + train.size());
-        }
+    ArrayList<Wagon> train;
+    int wagonNumber;
+    Scanner cin;
+    DBHandler dbHandler;
+    public ActionsWithPassenger(ArrayList<Wagon> train, Scanner cin, DBHandler dbHandler, int wagonNumber) {
+        this.cin = cin;
+        this.train = train;
+        this.dbHandler = dbHandler;
+        this.wagonNumber = wagonNumber;
     }
-    public void removing(ArrayList<Wagon> train, Scanner cin) {
-        System.out.println("Where do you want to remove the passenger?");
-        System.out.println("Max amount of wagons in the train is " + train.size());
-        int wagonNumber = cin.nextInt();
-        if(wagonNumber > 0 && wagonNumber <= train.size()) {
-            System.out.println("In which seat does the passenger sit?");
-            int seatNumber = cin.nextInt();
-            if (seatNumber <= train.get(wagonNumber-1).getPassengers().size() && seatNumber > 0) {
-                train.get(wagonNumber-1).getPassengers().remove(seatNumber-1);
-            } else {
-                System.out.println("The number is out of range");
-                System.out.println("Please enter a number between 1 and " + train.get(wagonNumber-1).getPassengers().size());
-            }
-        } else {
-            System.out.println("The number is out of range");
-            System.out.println("Please enter a number between 1 and " + train.size());
-        }
+    public void adding() throws SQLException {
+        System.out.print("First name: ");
+        String firstname = cin.next().trim();
+        System.out.print("Last name: ");
+        String lastName = cin.next().trim();
+        System.out.print("Age: ");
+        int age = cin.nextInt();
+        System.out.println("Do you have a student card?(Yes or No)");
+        boolean isStudent = cin.next().trim().toLowerCase().equals("yes");
+        System.out.println("Do you have a disability?(Yes or No)");
+        boolean isDisabled = cin.next().trim().toLowerCase().equals("yes");
+        int idWagon = train.get(wagonNumber).getIdWagon();
+        dbHandler.addPassenger(firstname, lastName, age, isStudent, isDisabled, idWagon);
+        dbHandler.updateTrain(train);
+        System.out.println("You have successfully added the passenger!!!");
+    }
+    public void removing() throws SQLException {
+        System.out.println("Enter ticket number: ");
+        String ticketNumber = cin.next().trim();
+        dbHandler.removePassenger(ticketNumber, train.get(wagonNumber).getIdWagon());
+        dbHandler.updateTrain(train);
+        System.out.println("You have successfully removed the passenger");
     }
 
-    public void changingFirstName(ArrayList<Wagon> train, Scanner cin) {
-        System.out.println("In which wagon is the passenger?");
-        System.out.println("Max amount of wagons in the train is " + train.size());
-        int wagonNumber = cin.nextInt();
-        if(wagonNumber > 0 && wagonNumber <= train.size()) {
-            System.out.print("Your current firstname in ticket: ");
-            String firstName = cin.next().trim();
-            for (int i = 0; i < train.get(wagonNumber-1).getPassengers().size(); ++i) {
-                if (train.get(wagonNumber-1).getPassengers().get(i).getFirstName().equals(firstName)) {
-                    System.out.print("Firstname to be changed to: ");
-                    firstName = cin.next().trim();
-                    train.get(wagonNumber-1).getPassengers().get(i).setFirstName(firstName);
-                    break;
-                }
-            }
-        } else {
-            System.out.println("The number is out of range");
-            System.out.println("Please enter a number between 1 and " + train.size());
-        }
+    public void changingFirstName(String ticketNumber) throws SQLException {
+        System.out.println("Enter your first name you want: ");
+        String firstName = cin.next().trim();
+        dbHandler.changeFirstName(ticketNumber, train.get(wagonNumber).getIdWagon(), firstName);
+        dbHandler.updateTrain(train);
+        System.out.println("You have successfully changed the first name of the passenger");
     }
 
-    public void changingLastName(ArrayList<Wagon> train, Scanner cin) {
-        System.out.println("In which wagon is the passenger?");
-        System.out.println("Max amount of wagons in the train is " + train.size());
-        int wagonNumber = cin.nextInt();
-        if(wagonNumber > 0 && wagonNumber <= train.size()) {
-            System.out.print("Your current lastname in ticket: ");
-            String lastname = cin.next().trim();
-            for (int i = 0; i < train.get(wagonNumber-1).getPassengers().size(); ++i) {
-                if (train.get(wagonNumber-1).getPassengers().get(i).getLastName().equals(lastname)) {
-                    System.out.print("Lastname to be changed to: ");
-                    lastname = cin.next().trim();
-                    train.get(wagonNumber-1).getPassengers().get(i).setLastName(lastname);
-                    break;
-                }
-            }
-        } else {
-            System.out.println("The number is out of range");
-            System.out.println("Please enter a number between 1 and " + train.size());
-        }
+    public void changingLastName(String ticketNumber) throws SQLException {
+        System.out.println("Enter your last name you want: ");
+        String lastName = cin.next().trim();
+        dbHandler.changeLastName(ticketNumber, train.get(wagonNumber).getIdWagon(), lastName);
+        dbHandler.updateTrain(train);
+        System.out.println("You have successfully changed the last name of the passenger");
     }
 
-    public void changingAge(ArrayList<Wagon> train, Scanner cin) {
-        System.out.println("In which wagon is the passenger?");
-        System.out.println("Max amount of wagons in the train is " + train.size());
-        int wagonNumber = cin.nextInt();
-        if(wagonNumber > 0 && wagonNumber <= train.size()) {
-            System.out.print("Your current firstname in ticket: ");
-            int age = cin.nextInt();
-            for (int i = 0; i < train.get(wagonNumber-1).getPassengers().size(); ++i) {
-                if (train.get(wagonNumber-1).getPassengers().get(i).getAge() == age) {
-                    System.out.print("Firstname to be changed to: ");
-                    age = cin.nextInt();
-                    train.get(wagonNumber-1).getPassengers().get(i).setAge(age);
-                    break;
-                }
-            }
-        } else {
-            System.out.println("The number is out of range");
-            System.out.println("Please enter a number between 1 and " + train.size());
-        }
+    public void changingAge(String ticketNumber) throws SQLException {
+        System.out.println("Enter your age you want: ");
+        int age = cin.nextInt();
+        dbHandler.changeAge(ticketNumber, train.get(wagonNumber).getIdWagon(), age);
+        dbHandler.updateTrain(train);
+        System.out.println("You have successfully changed the age of the passenger");
     }
 }

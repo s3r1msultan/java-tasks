@@ -3,6 +3,7 @@ import Actions.ActionsWithWagon;
 import Actions.Commands;
 import Actions.Verification;
 import DataBase.DBHandler;
+import Passengers.Passenger;
 import Wagons.Wagon;
 
 import java.sql.SQLException;
@@ -25,38 +26,57 @@ public class Main {
                 break;
             } else if (menuNum == 1) {
                 boolean answer = new Verification().isValidManager(dbHandler);
-                ActionsWithWagon actionsWithWagon = new ActionsWithWagon();
+                ActionsWithWagon actionsWithWagon = new ActionsWithWagon(train, cin, dbHandler);
                 while(answer) {
                     menu.managerCommands();
                     menuNum = cin.nextInt();
                     if (menuNum == 0) {
                         break;
 
-
-
                     } else if(menuNum == 1) {
+
+                        System.out.println("####################################");
+                        System.out.println("Please, enter the number of the wagon you want to work with");
+                        System.out.println("Max amount of wagons in the train is " + train.size());
+                        System.out.print("Enter wagon number: ");
+                        int wagonNumber = cin.nextInt()-1;
+                        System.out.println("####################################");
+                        if(!(wagonNumber >= 0 && wagonNumber < train.size())) {
+                            System.out.println("The number is out of range");
+                            System.out.println("Please, enter a number between 1 and " + train.size());
+                            System.out.println("####################################");
+                            continue;
+                        }
+
                         while(true) {
-                            ActionsWithPassenger actionsWithPassenger = new ActionsWithPassenger();
+                            ActionsWithPassenger actionsWithPassenger = new ActionsWithPassenger(train, cin, dbHandler, wagonNumber);
                             menu.wagonEditingCommands();
                             menuNum = cin.nextInt();
                             if(menuNum == 0) {
                                 break;
                             } else if (menuNum == 1) {
-                                actionsWithPassenger.adding(train, cin);
+                                actionsWithPassenger.adding();
                             } else if (menuNum == 2) {
-                                actionsWithPassenger.removing(train, cin);
+                                actionsWithPassenger.removing();
                             } else if (menuNum == 3) {
-                                while(true) {
-                                    menu.passengerInfoEditingCommands();
-                                    menuNum = cin.nextInt();
-                                    if (menuNum == 0) {
+                                System.out.print("Enter ticket number: ");
+                                String ticketNumber = cin.next().trim();
+                                for (Passenger passenger: train.get(wagonNumber).getPassengers()) {
+                                    if (passenger.getTicketNumber().equals(ticketNumber)) {
+                                        while(true) {
+                                            menu.passengerInfoEditingCommands();
+                                            menuNum = cin.nextInt();
+                                            if (menuNum == 0) {
+                                                break;
+                                            } else if (menuNum == 1) {
+                                                actionsWithPassenger.changingFirstName(ticketNumber);
+                                            } else if (menuNum == 2) {
+                                                actionsWithPassenger.changingLastName(ticketNumber);
+                                            } else if (menuNum == 3) {
+                                                actionsWithPassenger.changingAge(ticketNumber);
+                                            }
+                                        }
                                         break;
-                                    } else if (menuNum == 1) {
-                                        actionsWithPassenger.changingFirstName(train, cin);
-                                    } else if (menuNum == 2) {
-                                        actionsWithPassenger.changingLastName(train, cin);
-                                    } else if (menuNum == 3) {
-                                        actionsWithPassenger.changingAge(train, cin);
                                     }
                                 }
                             }
@@ -65,15 +85,15 @@ public class Main {
 
                     // Adding a wagon
                     } else if(menuNum == 2) {
-                        actionsWithWagon.adding(train, cin, dbHandler);
+                        actionsWithWagon.adding();
 
                     // Removing a wagon
                     } else if(menuNum == 3) {
-                        actionsWithWagon.removing(train, cin, dbHandler);
+                        actionsWithWagon.removing();
 
                     // Info about a wagon
                     } else if(menuNum == 4) {
-                        actionsWithWagon.info(train, cin);
+                        actionsWithWagon.info();
                     }
                 }
             } else if (menuNum == 2) {
@@ -85,14 +105,15 @@ public class Main {
                     } else if (menuNum == 1) {
                         System.out.println("In which wagon is your seat?");
                         System.out.println("Max amount of wagons in the train is " + train.size());
-                        int wagonNumber = cin.nextInt();
-                        if(wagonNumber > 0 && wagonNumber <= train.size()) {
-                            System.out.print("Your ticket number in ticket: ");
-                            String ticketNum = cin.next().trim();
-                            for (int i = 0; i < train.get(wagonNumber-1).getPassengers().size(); ++i) {
-                                if (train.get(wagonNumber-1).getPassengers().get(i).getTicketNumber().equals(ticketNum)) {
-                                    train.get(wagonNumber-1).getInfo();
-                                    train.get(wagonNumber-1).getPassengers().get(i).getInfo();
+                        int wagonNumber = cin.nextInt() - 1;
+                        if(wagonNumber >= 0 && wagonNumber < train.size()) {
+                            System.out.print("Your ticket number: ");
+                            String  ticketNum = cin.next().trim();
+                            for (Passenger passenger: train.get(wagonNumber).getPassengers()) {
+                                if (ticketNum.equals(passenger.getTicketNumber())) {
+                                    System.out.println(train.get(wagonNumber).getInfo(false));
+                                    System.out.println(passenger.getInfo());
+                                    System.out.println("Ticket price: " + passenger.ticketPrice(train.get(wagonNumber).getPrice()));
                                     break;
                                 }
                             }
@@ -100,27 +121,9 @@ public class Main {
                             System.out.println("The number is out of range");
                             System.out.println("Please enter a number between 1 and " + train.size());
                         }
-
-                    } else if (menuNum == 2) {
-                        System.out.println("In which wagon is your seat?");
-                        int wagonNumber = cin.nextInt();
-                        if(wagonNumber > 0 && wagonNumber <= train.size()) {
-                            System.out.print("Your ticket number: ");
-                            String ticketNum = cin.next().trim();
-                            for (int i = 0; i < train.get(wagonNumber-1).getPassengers().size(); ++i) {
-                                if (train.get(wagonNumber-1).getPassengers().get(i).getTicketNumber().equals(ticketNum)) {
-                                    train.get(wagonNumber-1).getPassengers().remove(i);
-                                    break;
-                                }
-                            }
-                            System.out.println("We don't have such a ticket");
-                        } else {
-                            System.out.println("The number is out of range");
-                        }
                     }
                 }
             }
         }
-
     }
 }

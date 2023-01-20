@@ -14,13 +14,17 @@ public class Wagon {
     protected String typeOfWagon;
     protected ArrayList<Passenger> passengers = new ArrayList<>();
 
-    public String getInfo() {
-        return "Type: " + typeOfWagon + "\n" +
-                "Maximum number of passengers: " + maxNumberOfPassengers + '\n' +
-                "Number of available seats: " + getNumberOfAvailableSeats() + '\n' +
+    public String getInfo(boolean isManager) {
+        if(isManager) {
+            return "Type of wagon: " + typeOfWagon + "\n" +
+                    "Maximum number of passengers: " + maxNumberOfPassengers + '\n' +
+                    "Number of available seats: " + getNumberOfAvailableSeats() + '\n' +
+                    "Price: " + price + " kzt" + '\n' +
+                    "ID: " + idWagon + "\n";
+        }
+        return "Type of wagon: " + typeOfWagon + "\n" +
                 "Price: " + price + " kzt" + '\n' +
                 "ID: " + idWagon + "\n";
-
     }
     public int getIdWagon() {
         return idWagon;

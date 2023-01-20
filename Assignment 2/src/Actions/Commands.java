@@ -37,8 +37,8 @@ public class Commands {
         System.out.println("####################################");
         System.out.println("Manager menu");
         System.out.println("What do you want to do?");
-        System.out.println("1 - Change the name");
-        System.out.println("2 - Changer the surname");
+        System.out.println("1 - Change the first name");
+        System.out.println("2 - Changer the last name");
         System.out.println("3 - Change the age");
         System.out.println("0 - Go back");
         System.out.println("####################################");
@@ -49,7 +49,6 @@ public class Commands {
         System.out.println("Customer menu");
         System.out.println("What do you want to do?");
         System.out.println("1 - Get information about ticket");
-        System.out.println("2 - Cancel ticket"); // Вводим номер билета, имя и фамилию
         System.out.println("0 - Go back");
         System.out.println("####################################");
     }

@@ -7,8 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBHandler extends Configs {
-    String passengerDB = "`passengers`";
-    String wagonsDB = "`wagons`";
+    String passengersTable = "`passengers`";
+    String wagonsTable = "`wagons`";
 
     public boolean isValid(String login, String password) throws SQLException {
         Connection connection = getConnection();
@@ -26,54 +26,69 @@ public class DBHandler extends Configs {
         }
     }
 
-    public void showPassengers() throws SQLException {
+    public void addPassenger(String firstname, String lastname, int age, boolean isStudent, boolean isDisabled, int idWagon) throws SQLException {
         Connection connection = getConnection();
-        Statement statement = connection.createStatement();
-        String showPassengers = "SELECT * FROM " + passengerDB + ";";
-        ResultSet passenger = statement.executeQuery(showPassengers);
-        while(passenger.next()) {
-            System.out.print(passenger.getInt(1) + " ");
-            System.out.print(passenger.getString(2) + " ");
-            System.out.print(passenger.getString(3) + " ");
-            System.out.println(passenger.getInt(4));
-        }
+        String addPassenger = "INSERT INTO " + passengersTable + " (firstname, lastname, age, isStudent, isDisabled, idWagon) VALUES (?, ?, ?, ?, ?, ?);";
+        PreparedStatement preparedStatement = connection.prepareStatement(addPassenger);
+        preparedStatement.setString(1, firstname);
+        preparedStatement.setString(2, lastname);
+        preparedStatement.setInt(3, age);
+        preparedStatement.setBoolean(4, isStudent);
+        preparedStatement.setBoolean(5, isDisabled);
+        preparedStatement.setInt(6, idWagon);
+        preparedStatement.executeUpdate();
     }
 
-    public void addPassenger(Passenger passenger) throws SQLException {
+    public void removePassenger(String ticketNumber, int idWagon) throws SQLException {
         Connection connection = getConnection();
-        String addPassenger = "INSERT INTO " + passengerDB + " (firstname, lastname, age) VALUES (?, ?, ?);";
-        PreparedStatement preparedStatement = connection.prepareStatement(addPassenger);
-        preparedStatement.setString(1, passenger.getFirstName());
-        preparedStatement.setString(2, passenger.getFirstName());
-        preparedStatement.setInt(3, passenger.getAge());
+        String removeWagon = "DELETE FROM " + passengersTable + " WHERE `passengers`.`idPassenger`=" + (Integer.parseInt(ticketNumber) - idWagon) + ";";
+        PreparedStatement preparedStatement = connection.prepareStatement(removeWagon);
         preparedStatement.executeUpdate();
-        System.out.println("You have successfully added the passenger into the Passenger DB");
+    }
+
+    public void changeFirstName(String ticketNumber, int idWagon, String firstname) throws SQLException {
+        Connection connection = getConnection();
+        String changeFirstName = "UPDATE " + passengersTable + "SET `firstname`='" + firstname + "' WHERE `passengers`.`idPassenger`=" + (Integer.parseInt(ticketNumber) - idWagon) + ";";
+        PreparedStatement preparedStatement = connection.prepareStatement(changeFirstName);
+        preparedStatement.executeUpdate();
+    }
+
+    public void changeLastName(String ticketNumber, int idWagon, String lastname) throws SQLException {
+        Connection connection = getConnection();
+        String changeFirstName = "UPDATE " + passengersTable + "SET `lastname`='" + lastname + "' WHERE `passengers`.`idPassenger`=" + (Integer.parseInt(ticketNumber) - idWagon) + ";";
+        PreparedStatement preparedStatement = connection.prepareStatement(changeFirstName);
+        preparedStatement.executeUpdate();
+    }
+
+    public void changeAge(String ticketNumber, int idWagon, int age) throws SQLException {
+        Connection connection = getConnection();
+        String changeFirstName = "UPDATE " + passengersTable + "SET `age`='" + age + "' WHERE `passengers`.`idPassenger`=" + (Integer.parseInt(ticketNumber) - idWagon) + ";";
+        PreparedStatement preparedStatement = connection.prepareStatement(changeFirstName);
+        preparedStatement.executeUpdate();
     }
 
     public void addWagon(Wagon wagon) throws SQLException {
         Connection connection = getConnection();
-        String addWagon = "INSERT INTO " + wagonsDB + " (wagonType, maxPass, price) VALUES (?, ?, ?);";
+        String addWagon = "INSERT INTO " + wagonsTable + " (wagonType, maxPass, price) VALUES (?, ?, ?);";
         PreparedStatement preparedStatement = connection.prepareStatement(addWagon);
         preparedStatement.setString(1, wagon.getTypeOfWagon());
         preparedStatement.setInt(2, wagon.getMaxNumberOfPassengers());
         preparedStatement.setInt(3, wagon.getPrice());
         preparedStatement.executeUpdate();
-        System.out.println("You have successfully added the passenger into the Passenger DB");
     }
 
     public void removeWagon(Wagon wagon) throws SQLException {
         Connection connection = getConnection();
-        String removeWagon = "DELETE FROM " + wagonsDB + " WHERE `wagons`.`idWagon`=" + wagon.getIdWagon() + ";";
+        String removeWagon = "DELETE FROM " + wagonsTable + " WHERE `wagons`.`idWagon`=" + wagon.getIdWagon() + ";";
         PreparedStatement preparedStatement = connection.prepareStatement(removeWagon);
         preparedStatement.executeUpdate();
-        System.out.println("You have successfully added the passenger into the Passenger DB");
     }
 
     public void updateTrain(ArrayList<Wagon> train) throws SQLException {
         train.clear();
         Connection connection = getConnection();
         Statement statement = connection.createStatement();
-        String selectWagons = "SELECT * FROM " + wagonsDB + ";";
+        String selectWagons = "SELECT * FROM " + wagonsTable + ";";
         ResultSet resultSet = statement.executeQuery(selectWagons);
         while(resultSet.next()) {
             Wagon wagon;
@@ -95,7 +110,7 @@ public class DBHandler extends Configs {
             wagon.setIdWagon(resultSet.getInt(4));
             train.add(wagon);
         }
-        String selectPassengers = "SELECT * FROM " + passengerDB + ";";
+        String selectPassengers = "SELECT * FROM " + passengersTable + ";";
         resultSet = statement.executeQuery(selectPassengers);
         while(resultSet.next()) {
             Passenger passenger;
