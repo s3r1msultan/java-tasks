@@ -1,6 +1,6 @@
 package Actions;
 
-import DataBase.DBHandler;
+import DataBase.WagonsHandler;
 import Wagons.*;
 
 import java.sql.SQLException;
@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class ActionsWithWagon {
     ArrayList<Wagon> train;
     Scanner cin;
-    DBHandler dbHandler;
-    public ActionsWithWagon(ArrayList<Wagon> train, Scanner cin, DBHandler dbHandler) {
+    WagonsHandler wagonsHandler;
+    public ActionsWithWagon(ArrayList<Wagon> train, Scanner cin, WagonsHandler wagonsHandler) {
         this.cin = cin;
         this.train = train;
-        this.dbHandler = dbHandler;
+        this.wagonsHandler = wagonsHandler;
     }
 
     public void adding() throws SQLException {
@@ -23,13 +23,13 @@ public class ActionsWithWagon {
         System.out.print("Choose one of them: ");
         int wagonName = cin.nextInt();
         switch (wagonName) {
-            case 1 -> dbHandler.addWagon(new Deluxe());
-            case 2 -> dbHandler.addWagon(new Coupe());
-            case 3 -> dbHandler.addWagon(new ReservedSeat());
-            case 4 -> dbHandler.addWagon(new Seat());
+            case 1 -> wagonsHandler.addWagon(new Deluxe());
+            case 2 -> wagonsHandler.addWagon(new Coupe());
+            case 3 -> wagonsHandler.addWagon(new ReservedSeat());
+            case 4 -> wagonsHandler.addWagon(new Seat());
             default -> System.out.println("Sorry, we don't have the type of wagon like yours");
         }
-        dbHandler.updateTrain(train);
+        wagonsHandler.updateTrain(train);
         System.out.println("You have successfully added the wagon");
     }
 
@@ -40,8 +40,8 @@ public class ActionsWithWagon {
         System.out.print("Enter wagon number: ");
         int wagonNumber = cin.nextInt()-1;
         if(wagonNumber < train.size() && wagonNumber >= 0) {
-            dbHandler.removeWagon(train.get(wagonNumber));
-            dbHandler.updateTrain(train);
+            wagonsHandler.removeWagon(train.get(wagonNumber));
+            wagonsHandler.updateTrain(train);
             System.out.println("You have successfully removed the wagon");
         } else {
             System.out.println("The number is out of range");
@@ -54,11 +54,14 @@ public class ActionsWithWagon {
         System.out.println("Max amount of wagons in the train is " + train.size());
         System.out.print("Enter wagon number: ");
         int wagonNumber = cin.nextInt()-1;
+        System.out.println();
         if(wagonNumber < train.size() && wagonNumber >= 0) {
             System.out.println(train.get(wagonNumber).getInfo(true));
             for (int i = 0; i < train.get(wagonNumber).getPassengers().size(); ++i) {
                 System.out.println(i+1);
                 System.out.println(train.get(wagonNumber).getPassengers().get(i).getInfo());
+                System.out.println("Ticket price: " + train.get(wagonNumber).getPassengers().get(i).ticketPrice(train.get(wagonNumber).getPrice()) + " kzt");
+                System.out.println();
             }
         } else {
             System.out.println("The number is out of range");

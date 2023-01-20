@@ -7,16 +7,9 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBHandler extends Configs {
-    String passengersTable = "`passengers`";
-    String wagonsTable = "`wagons`";
+    protected final String passengersTable = "`passengers`";
+    protected final String wagonsTable = "`wagons`";
 
-    public boolean isValid(String login, String password) throws SQLException {
-        Connection connection = getConnection();
-        String query = "SELECT * FROM managers WHERE login='" + login + "'AND password='" + password + "';";
-        Statement statement = connection.createStatement();
-        ResultSet rst = statement.executeQuery(query);
-        return rst.next();
-    }
     public Connection getConnection() {
         try {
             final String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DBNAME;
@@ -26,62 +19,12 @@ public class DBHandler extends Configs {
         }
     }
 
-    public void addPassenger(String firstname, String lastname, int age, boolean isStudent, boolean isDisabled, int idWagon) throws SQLException {
+    public boolean isValidManager(String login, String password) throws SQLException {
         Connection connection = getConnection();
-        String addPassenger = "INSERT INTO " + passengersTable + " (firstname, lastname, age, isStudent, isDisabled, idWagon) VALUES (?, ?, ?, ?, ?, ?);";
-        PreparedStatement preparedStatement = connection.prepareStatement(addPassenger);
-        preparedStatement.setString(1, firstname);
-        preparedStatement.setString(2, lastname);
-        preparedStatement.setInt(3, age);
-        preparedStatement.setBoolean(4, isStudent);
-        preparedStatement.setBoolean(5, isDisabled);
-        preparedStatement.setInt(6, idWagon);
-        preparedStatement.executeUpdate();
-    }
-
-    public void removePassenger(String ticketNumber, int idWagon) throws SQLException {
-        Connection connection = getConnection();
-        String removeWagon = "DELETE FROM " + passengersTable + " WHERE `passengers`.`idPassenger`=" + (Integer.parseInt(ticketNumber) - idWagon) + ";";
-        PreparedStatement preparedStatement = connection.prepareStatement(removeWagon);
-        preparedStatement.executeUpdate();
-    }
-
-    public void changeFirstName(String ticketNumber, int idWagon, String firstname) throws SQLException {
-        Connection connection = getConnection();
-        String changeFirstName = "UPDATE " + passengersTable + "SET `firstname`='" + firstname + "' WHERE `passengers`.`idPassenger`=" + (Integer.parseInt(ticketNumber) - idWagon) + ";";
-        PreparedStatement preparedStatement = connection.prepareStatement(changeFirstName);
-        preparedStatement.executeUpdate();
-    }
-
-    public void changeLastName(String ticketNumber, int idWagon, String lastname) throws SQLException {
-        Connection connection = getConnection();
-        String changeFirstName = "UPDATE " + passengersTable + "SET `lastname`='" + lastname + "' WHERE `passengers`.`idPassenger`=" + (Integer.parseInt(ticketNumber) - idWagon) + ";";
-        PreparedStatement preparedStatement = connection.prepareStatement(changeFirstName);
-        preparedStatement.executeUpdate();
-    }
-
-    public void changeAge(String ticketNumber, int idWagon, int age) throws SQLException {
-        Connection connection = getConnection();
-        String changeFirstName = "UPDATE " + passengersTable + "SET `age`='" + age + "' WHERE `passengers`.`idPassenger`=" + (Integer.parseInt(ticketNumber) - idWagon) + ";";
-        PreparedStatement preparedStatement = connection.prepareStatement(changeFirstName);
-        preparedStatement.executeUpdate();
-    }
-
-    public void addWagon(Wagon wagon) throws SQLException {
-        Connection connection = getConnection();
-        String addWagon = "INSERT INTO " + wagonsTable + " (wagonType, maxPass, price) VALUES (?, ?, ?);";
-        PreparedStatement preparedStatement = connection.prepareStatement(addWagon);
-        preparedStatement.setString(1, wagon.getTypeOfWagon());
-        preparedStatement.setInt(2, wagon.getMaxNumberOfPassengers());
-        preparedStatement.setInt(3, wagon.getPrice());
-        preparedStatement.executeUpdate();
-    }
-
-    public void removeWagon(Wagon wagon) throws SQLException {
-        Connection connection = getConnection();
-        String removeWagon = "DELETE FROM " + wagonsTable + " WHERE `wagons`.`idWagon`=" + wagon.getIdWagon() + ";";
-        PreparedStatement preparedStatement = connection.prepareStatement(removeWagon);
-        preparedStatement.executeUpdate();
+        String query = "SELECT * FROM managers WHERE login='" + login + "'AND password='" + password + "';";
+        Statement statement = connection.createStatement();
+        ResultSet rst = statement.executeQuery(query);
+        return rst.next();
     }
 
     public void updateTrain(ArrayList<Wagon> train) throws SQLException {
@@ -113,6 +56,7 @@ public class DBHandler extends Configs {
         String selectPassengers = "SELECT * FROM " + passengersTable + ";";
         resultSet = statement.executeQuery(selectPassengers);
         while(resultSet.next()) {
+
             Passenger passenger;
             String firstName = resultSet.getString(2);
             String lastName = resultSet.getString(3);

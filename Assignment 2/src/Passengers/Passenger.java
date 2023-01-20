@@ -19,10 +19,11 @@ public class Passenger {
     }
 
     public String getInfo() {
-        return "Firstname: " + firstName + '\n' +
-                "Lastname: " + lastName + '\n' +
+        return "First name: " + firstName + '\n' +
+                "Last name: " + lastName + '\n' +
                 "Age: " + age + '\n' +
-                "Ticket number: " + ticketNumber + '\n';
+                "Class: " + getClass().getSimpleName() + '\n' +
+                "Ticket number: " + ticketNumber;
     }
     public String getTicketNumber() {
         return ticketNumber;

@@ -14,7 +14,7 @@ public class Commands {
         System.out.println("####################################");
         System.out.println("Manager menu");
         System.out.println("What do you want to do?");
-        System.out.println("1 - Edit a wagon");
+        System.out.println("1 - Edit a passenger composition");
         System.out.println("2 - Add a wagon");
         System.out.println("3 - Remove a wagon");
         System.out.println("4 - Get information about a wagon");

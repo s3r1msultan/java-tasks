@@ -45,10 +45,6 @@ public class Wagon {
         return maxNumberOfPassengers - passengers.size();
     }
 
-    public int getNumberOfReservedSeats() {
-        return passengers.size();
-    }
-
     public String getTypeOfWagon() {
         return typeOfWagon;
     }

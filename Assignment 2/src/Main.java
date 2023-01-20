@@ -3,6 +3,8 @@ import Actions.ActionsWithWagon;
 import Actions.Commands;
 import Actions.Verification;
 import DataBase.DBHandler;
+import DataBase.PassengersHandler;
+import DataBase.WagonsHandler;
 import Passengers.Passenger;
 import Wagons.Wagon;
 
@@ -12,11 +14,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
+
+
         Commands menu = new Commands();
         Scanner cin = new Scanner(System.in);
         ArrayList<Wagon> train = new ArrayList<>();
         DBHandler dbHandler = new DBHandler();
         dbHandler.updateTrain(train);
+
+
         int menuNum;
         while(true) {
             menu.initialCommands();
@@ -26,7 +32,8 @@ public class Main {
                 break;
             } else if (menuNum == 1) {
                 boolean answer = new Verification().isValidManager(dbHandler);
-                ActionsWithWagon actionsWithWagon = new ActionsWithWagon(train, cin, dbHandler);
+                WagonsHandler wagonsHandler = new WagonsHandler();
+                ActionsWithWagon actionsWithWagon = new ActionsWithWagon(train, cin, wagonsHandler);
                 while(answer) {
                     menu.managerCommands();
                     menuNum = cin.nextInt();
@@ -49,7 +56,8 @@ public class Main {
                         }
 
                         while(true) {
-                            ActionsWithPassenger actionsWithPassenger = new ActionsWithPassenger(train, cin, dbHandler, wagonNumber);
+                            PassengersHandler passengersHandler = new PassengersHandler();
+                            ActionsWithPassenger actionsWithPassenger = new ActionsWithPassenger(train, cin, passengersHandler, wagonNumber);
                             menu.wagonEditingCommands();
                             menuNum = cin.nextInt();
                             if(menuNum == 0) {

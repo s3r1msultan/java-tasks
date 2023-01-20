@@ -14,7 +14,7 @@ public class Verification {
         String login = cin.next().trim();
         System.out.print("Password: ");
         String password = cin.next().trim();
-        if (dbHandler.isValid(login, password)) {
+        if (dbHandler.isValidManager(login, password)) {
             System.out.println();
             System.out.println("You have successfully logged in");
             System.out.println("####################################");
@@ -25,6 +25,5 @@ public class Verification {
             System.out.println("####################################");
             return false;
         }
-
     }
 }

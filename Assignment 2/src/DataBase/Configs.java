@@ -6,5 +6,4 @@ public class Configs {
     protected final String USER = "root";
     protected final String PASS = "root";
     protected final String DBNAME = "trains";
-
 }
