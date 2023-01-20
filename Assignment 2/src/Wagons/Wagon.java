@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class Wagon {
     protected int price;
     protected int maxNumberOfPassengers;
+
+
+
+    protected int idWagon;
     protected String typeOfWagon;
     protected ArrayList<Passenger> passengers = new ArrayList<>();
 
@@ -14,9 +18,17 @@ public class Wagon {
         return "Type: " + typeOfWagon + "\n" +
                 "Maximum number of passengers: " + maxNumberOfPassengers + '\n' +
                 "Number of available seats: " + getNumberOfAvailableSeats() + '\n' +
-                "Price: " + price + " kzt" + '\n';
+                "Price: " + price + " kzt" + '\n' +
+                "ID: " + idWagon + "\n";
+
+    }
+    public int getIdWagon() {
+        return idWagon;
     }
 
+    public void setIdWagon(int idWagon) {
+        this.idWagon = idWagon;
+    }
     public int getPrice() {
         return price;
     }

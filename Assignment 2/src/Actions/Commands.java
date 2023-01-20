@@ -1,3 +1,5 @@
+package Actions;
+
 public class Commands {
     public void initialCommands() {
         System.out.println("####################################");

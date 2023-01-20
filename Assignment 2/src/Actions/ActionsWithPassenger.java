@@ -1,16 +1,12 @@
-package Passengers;
+package Actions;
 
+import Passengers.*;
 import Wagons.Wagon;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class ActionsWithPassenger {
-    public String getRandomTicket(int start, int end) {
-        Random random = new Random();
-        return Integer.toString(random.nextInt(start, end));
-    }
     public void adding(ArrayList<Wagon> train, Scanner cin) {
         System.out.println("Where do you want to add the passenger?");
         System.out.println("Max amount of wagons in the train is " + train.size());
@@ -23,22 +19,20 @@ public class ActionsWithPassenger {
             System.out.print("Age: ");
             int age = cin.nextInt();
             System.out.println("Do you have a student card?(Yes or No)");
-            String isStudent = cin.next().trim().toLowerCase();
+            boolean isStudent = cin.next().trim().toLowerCase().equals("yes");
             System.out.println("Do you have a disability?(Yes or No)");
-            String isInvalid = cin.next().trim().toLowerCase();
+            boolean isInvalid = cin.next().trim().toLowerCase().equals("yes");
             String ticket = wagonNumber + "" + train.get(wagonNumber-1).getPassengers().size();
-
-
-            if (isInvalid.equals("yes")) {
-                Invalid invalid = new Invalid(firstName, lastName, age, ticket);
-                train.get(wagonNumber-1).getPassengers().add(invalid);
-            } else if (isStudent.equals("yes")) {
+            if (isInvalid) {
+                Disabled disabled = new Disabled(firstName, lastName, age, ticket);
+                train.get(wagonNumber-1).getPassengers().add(disabled);
+            } else if (isStudent) {
                 Student student = new Student(firstName, lastName, age, ticket);
                 train.get(wagonNumber-1).getPassengers().add(student);
             } else if(age >= 60) {
                 Elderly elderly = new Elderly(firstName, lastName, age, ticket);
                 train.get(wagonNumber-1).getPassengers().add(elderly);
-            } else if(age <= 7) {
+            } else if(age < 16) {
                 Child child = new Child(firstName, lastName, age, ticket);
                 train.get(wagonNumber-1).getPassengers().add(child);
             } else {

@@ -1,25 +1,21 @@
-import Passengers.ActionsWithPassenger;
-import Wagons.ActionsWithWagon;
-import Wagons.Coupe;
-import Wagons.ReservedSeat;
+import Actions.ActionsWithPassenger;
+import Actions.ActionsWithWagon;
+import Actions.Commands;
+import Actions.Verification;
+import DataBase.DBHandler;
 import Wagons.Wagon;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Commands menu = new Commands();
         Scanner cin = new Scanner(System.in);
         ArrayList<Wagon> train = new ArrayList<>();
-        for (int i = 0; i < 8; ++i) {
-            train.add(new Coupe());
-        }
-        for (int i = 0; i < 8; ++i) {
-            train.add(new ReservedSeat());
-        }
-
-
+        DBHandler dbHandler = new DBHandler();
+        dbHandler.updateTrain(train);
         int menuNum;
         while(true) {
             menu.initialCommands();
@@ -28,8 +24,7 @@ public class Main {
                 System.out.println("You left the menu");
                 break;
             } else if (menuNum == 1) {
-                Verification verification = new Verification();
-                boolean answer = verification.isValidManager();
+                boolean answer = new Verification().isValidManager(dbHandler);
                 ActionsWithWagon actionsWithWagon = new ActionsWithWagon();
                 while(answer) {
                     menu.managerCommands();
@@ -70,11 +65,11 @@ public class Main {
 
                     // Adding a wagon
                     } else if(menuNum == 2) {
-                        actionsWithWagon.adding(train, cin);
+                        actionsWithWagon.adding(train, cin, dbHandler);
 
                     // Removing a wagon
                     } else if(menuNum == 3) {
-                        actionsWithWagon.removing(train, cin);
+                        actionsWithWagon.removing(train, cin, dbHandler);
 
                     // Info about a wagon
                     } else if(menuNum == 4) {
@@ -108,10 +103,9 @@ public class Main {
 
                     } else if (menuNum == 2) {
                         System.out.println("In which wagon is your seat?");
-                        System.out.println("Max amount of wagons in the train is " + train.size());
                         int wagonNumber = cin.nextInt();
                         if(wagonNumber > 0 && wagonNumber <= train.size()) {
-                            System.out.print("Your ticket number in ticket: ");
+                            System.out.print("Your ticket number: ");
                             String ticketNum = cin.next().trim();
                             for (int i = 0; i < train.get(wagonNumber-1).getPassengers().size(); ++i) {
                                 if (train.get(wagonNumber-1).getPassengers().get(i).getTicketNumber().equals(ticketNum)) {
@@ -119,9 +113,9 @@ public class Main {
                                     break;
                                 }
                             }
+                            System.out.println("We don't have such a ticket");
                         } else {
                             System.out.println("The number is out of range");
-                            System.out.println("Please enter a number between 1 and " + train.size());
                         }
                     }
                 }
