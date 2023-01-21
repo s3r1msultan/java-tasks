@@ -15,11 +15,13 @@ public class WagonsHandler extends DBHandler{
         preparedStatement.setInt(2, wagon.getMaxNumberOfPassengers());
         preparedStatement.setInt(3, wagon.getPrice());
         preparedStatement.executeUpdate();
+        connection.close();
     }
     public void removeWagon(Wagon wagon) throws SQLException {
         Connection connection = getConnection();
         String removeWagon = "DELETE FROM " + wagonsTable + " WHERE `wagons`.`idWagon`=" + wagon.getIdWagon() + ";";
         PreparedStatement preparedStatement = connection.prepareStatement(removeWagon);
         preparedStatement.executeUpdate();
+        connection.close();
     }
 }

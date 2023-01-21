@@ -1,0 +1,146 @@
+[
+{
+    "type": "header",
+    "version": "5.2.0",
+    "comment": "Export to JSON plugin for PHPMyAdmin"
+},
+{
+    "type": "database",
+    "name": "trains"
+},
+{
+    "type": "table",
+    "name": "managers",
+    "database": "trains",
+    "data": 
+[
+{
+    "id": "3",
+    "login": "kali",
+    "password": "kali"
+},
+{
+    "id": "1",
+    "login": "root",
+    "password": "root"
+},
+{
+    "id": "2",
+    "login": "root",
+    "password": "toor"
+}
+]
+
+}
+,{
+    "type": "table",
+    "name": "passengers",
+    "database": "trains",
+    "data": 
+[
+{
+    "idPassenger": "5",
+    "firstname": "Andrey",
+    "lastname": "Kolesnikov",
+    "age": "19",
+    "isStudent": "1",
+    "isDisabled": "0",
+    "idWagon": "2022"
+},
+{
+    "idPassenger": "7",
+    "firstname": "Yersultan",
+    "lastname": "Serimbetov",
+    "age": "19",
+    "isStudent": "1",
+    "isDisabled": "0",
+    "idWagon": "2022"
+},
+{
+    "idPassenger": "8",
+    "firstname": "Gary",
+    "lastname": "Martin",
+    "age": "15",
+    "isStudent": "0",
+    "isDisabled": "0",
+    "idWagon": "2022"
+},
+{
+    "idPassenger": "9",
+    "firstname": "Daniel",
+    "lastname": "Wilson",
+    "age": "62",
+    "isStudent": "0",
+    "isDisabled": "0",
+    "idWagon": "2027"
+},
+{
+    "idPassenger": "10",
+    "firstname": "Justin",
+    "lastname": "Howard",
+    "age": "25",
+    "isStudent": "0",
+    "isDisabled": "1",
+    "idWagon": "2027"
+},
+{
+    "idPassenger": "11",
+    "firstname": "Walter",
+    "lastname": "Garcia",
+    "age": "16",
+    "isStudent": "1",
+    "isDisabled": "0",
+    "idWagon": "2027"
+},
+{
+    "idPassenger": "12",
+    "firstname": "Erlan",
+    "lastname": "Kasymov",
+    "age": "25",
+    "isStudent": "0",
+    "isDisabled": "0",
+    "idWagon": "2022"
+}
+]
+
+}
+,{
+    "type": "table",
+    "name": "wagons",
+    "database": "trains",
+    "data": 
+[
+{
+    "wagonType": "Seat",
+    "maxPass": "70",
+    "price": "4500",
+    "idWagon": "2022"
+},
+{
+    "wagonType": "Reserved Seat",
+    "maxPass": "55",
+    "price": "7500",
+    "idWagon": "2026"
+},
+{
+    "wagonType": "Deluxe",
+    "maxPass": "12",
+    "price": "18000",
+    "idWagon": "2027"
+},
+{
+    "wagonType": "Coupe",
+    "maxPass": "35",
+    "price": "11500",
+    "idWagon": "2028"
+},
+{
+    "wagonType": "Deluxe",
+    "maxPass": "12",
+    "price": "18000",
+    "idWagon": "2029"
+}
+]
+
+}
+]
