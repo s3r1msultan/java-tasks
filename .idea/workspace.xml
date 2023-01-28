@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="13e410d1-8031-4404-adb0-0ef8669b7f52" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Body.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Bus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Hyundai/HyundaiBus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Hyundai/HyundaiRefrigerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Hyundai/HyundaiVan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Mercedes/MercBus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Mercedes/MercRefrigerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Mercedes/MercTruck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Mercedes/MercVan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Volvo/VolvoBus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Volvo/VolvoRefrigerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Manufacturers/Volvo/VolvoTruck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Refrigerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Truck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Van.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Body.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Crossover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/Capacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/HighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/LowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/MediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCrossover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWSedan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCrossover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiMinivan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiSedan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCrossover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercMiniVan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercSUV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercSedan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo/VolvoCrossover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo/VolvoSedan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Minivan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/SUV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Sedan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Actions/ActionsWithPassenger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Actions/ActionsWithWagon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Actions/Commands.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Actions/Verification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/DataBase/Configs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/DataBase/DBHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/DataBase/PassengersHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/DataBase/WagonsHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/DataBase/trains.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Passengers/Adult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Passengers/Child.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Passengers/Disabled.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Passengers/Elderly.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Passengers/Passenger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Passengers/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Wagons/Coupe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Wagons/Deluxe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Wagons/ReservedSeat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Wagons/Seat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Wagons/Wagon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/src/phoneClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/src/phoneClass/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JXayimjtlmcGG31zOv637S8xIN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Program Files (x86)/mysql-connector-j-8.0.31.jar",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yers\OneDrive\Рабочий стол\Java\Assignment 2\src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13e410d1-8031-4404-adb0-0ef8669b7f52" name="Changes" comment="" />
+      <created>1672227142446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672227142446</updated>
+      <workItem from="1672227143483" duration="46000" />
+      <workItem from="1672227541297" duration="26000" />
+      <workItem from="1674450962851" duration="6159000" />
+      <workItem from="1674495044312" duration="44000" />
+      <workItem from="1674537615374" duration="6160000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
