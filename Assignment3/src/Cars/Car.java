@@ -1,10 +1,11 @@
 package Cars;
 
 public class Car {
-    private String manufacturer;
+    protected String manufacturer;
     private String fuel;
     private String color;
     private int year;
+    private int mileage;
 
     public int getMileage() {
         return mileage;
@@ -13,8 +14,6 @@ public class Car {
     public void setMileage(int mileage) {
         this.mileage = mileage;
     }
-
-    private int mileage;
 
     public String getManufacturer() {
         return manufacturer;

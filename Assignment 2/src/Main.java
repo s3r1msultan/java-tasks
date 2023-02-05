@@ -102,15 +102,18 @@ public class Main {
                     } else if(menuNum == 2) {
                         actionsWithWagon.adding();
 
+
                     // Removing a wagon
                     } else if(menuNum == 3) {
                         actionsWithWagon.removing();
+
 
                     // Info about a wagon
                     } else if(menuNum == 4) {
                         actionsWithWagon.info();
                     }
                 }
+
 
                 //Customer commands
             } else if (menuNum == 2) {
