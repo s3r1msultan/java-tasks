@@ -1,5 +1,5 @@
 package Cars;
 
-public class PassengerCar extends Car{
+abstract public class PassengerCar extends Car{
     protected String transmission;
 }

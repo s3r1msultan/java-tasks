@@ -2,43 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13e410d1-8031-4404-adb0-0ef8669b7f52" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/EngineCapacity/Capacity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/EngineCapacity/HighCapacity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/EngineCapacity/LowCapacity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/EngineCapacity/MediumCapacity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment3/src/Commands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment3/src/DataBase/Configs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment3/src/DataBase/DBHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment3/src/Verification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCapacity/BMWCrossoverHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCapacity/BMWCrossoverLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCapacity/BMWCrossoverMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCapacity/BMWSedanHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCapacity/BMWSedanLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCapacity/BMWSedanMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiCrossoverHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiCrossoverLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiCrossoverMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiMinivanHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiMinivanLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiMinivanMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiSedanHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiSedanLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Hyundai/HyundaiCapacity/HyundaiSedanMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercCrossoverHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercCrossoverLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercCrossoverMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercMinivanHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercMinivanLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercMinivanMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercSUVHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercSUVLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercSUVMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercSedanHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercSedanLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Mercedes/MercCapacity/MercSedanMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo/VolvoCapacity/VolvoCrossoverHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo/VolvoCapacity/VolvoCrossoverLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo/VolvoCapacity/VolvoCrossoverMediumCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo/VolvoCapacity/VolvoSedanHighCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo/VolvoCapacity/VolvoSedanLowCapacity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo/VolvoCapacity/VolvoSedanMediumCapacity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/src/DataBase/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/src/DataBase/Configs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCarBody/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/Cars.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/CommercialCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Crossover.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Crossover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCrossover.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCrossover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWSedan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWSedan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Body.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Bus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Bus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Refrigerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Refrigerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Truck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Van.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/CommercialCarBody/Van.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/Body.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/Crossover.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/Crossover.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/EngineCapacity/HighCapacity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/EngineCapacity/HighCapacity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/EngineCapacity/LowCapacity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/EngineCapacity/LowCapacity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/EngineCapacity/MediumCapacity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/EngineCapacity/MediumCapacity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/Manufacturers/BMW/BMWCrossover.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/Manufacturers/BMW/BMWCrossover.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/Manufacturers/BMW/BMWSedan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Cars/PassengerCarBody/Manufacturers/BMW/BMWSedan.class" afterDir="false" />
-    </list>
-    <list id="a6160b4a-d538-4e36-832c-2bb3eddc77ef" name="Changes by adil6" comment="">
+      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/Capacity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/Capacity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/HighCapacity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/HighCapacity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/LowCapacity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/LowCapacity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/MediumCapacity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/EngineCapacity/MediumCapacity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCrossover.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Manufacturers/BMW/BMWCrossover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Minivan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Minivan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/SUV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/SUV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Sedan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/src/Cars/PassengerCarBody/Sedan.java" afterDir="false" />
     </list>
+    <list id="a6160b4a-d538-4e36-832c-2bb3eddc77ef" name="Changes by adil6" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,24 +79,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/romeo/Desktop/Java/Assignment3/src/Cars/PassengerCarBody/Manufacturers/Volvo&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "create.test.in.the.same.root": "true",
+    "full.screen.before.presentation.mode": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/romeo/Desktop/Java/Assignment3",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Colors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Cars" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\romeo\Desktop\Java\Assignment3\src\Cars\PassengerCarBody\Manufacturers\Volvo" />
       <recent name="C:\Users\romeo\Desktop\Java\Assignment3\src\Cars\PassengerCarBody\Manufacturers\BMW" />
@@ -92,6 +108,7 @@
       <recent name="C:\Users\Yers\OneDrive\Рабочий стол\Java\Assignment 2\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Cars.PassengerCarBody.Manufacturers.BMW.BMWCrossoverCapacity" />
       <recent name="Cars.PassengerCarBody.Manufacturers.BMW.Models" />
       <recent name="" />
       <recent name="DataBase" />
@@ -119,6 +136,8 @@
       <workItem from="1675492512111" duration="3795000" />
       <workItem from="1675529531582" duration="1259000" />
       <workItem from="1675579780378" duration="605000" />
+      <workItem from="1675617376560" duration="477000" />
+      <workItem from="1675685009737" duration="8092000" />
     </task>
     <servers />
   </component>

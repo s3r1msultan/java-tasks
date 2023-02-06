@@ -1,7 +1,7 @@
 package Cars.PassengerCarBody;
 
 public class SUV extends Body{
-    public SUV() {
+    protected SUV() {
         body = "SUV";
     }
 }

@@ -1,8 +1,7 @@
 package Cars.PassengerCarBody;
 
 public class Crossover extends Body{
-    public Crossover() {
+    protected Crossover() {
         body = "Crossover";
-
     }
 }

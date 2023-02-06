@@ -1,6 +1,7 @@
 package Cars;
 
-public class Car {
+abstract public class Car {
+    protected float engineCapacity;
     protected String manufacturer;
     private String fuel;
     private String color;
@@ -45,5 +46,11 @@ public class Car {
 
     public void setYear(int year) {
         this.year = year;
+    }
+    protected float getEngineCapacity() {
+        return engineCapacity;
+    }
+    protected void setEngineCapacity(float engineCapacity) {
+        this.engineCapacity = engineCapacity;
     }
 }

@@ -1,7 +1,7 @@
 package Cars.PassengerCarBody;
 
 public class Minivan extends Body{
-    public Minivan() {
+    protected Minivan() {
         body="Minivan";
     }
 }
