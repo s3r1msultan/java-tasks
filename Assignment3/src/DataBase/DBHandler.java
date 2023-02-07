@@ -1,10 +1,13 @@
 package DataBase;
 
+import Cars.Car;
+
 import java.sql.*;
 import java.util.ArrayList;
 
 public class DBHandler extends Configs {
     protected final String managersTable = "`managers`";
+    protected final String carsTable = "`cars`";
 
     // Returns connection object that can interact with database
     public Connection getConnection() {
@@ -24,4 +27,8 @@ public class DBHandler extends Configs {
         return rst.next();    // this one tells us if we have such a manager
     }
 
+    public void updateCars(ArrayList<Car> cars) {
+        Connection connection = getConnection();
+
+    }
 }
