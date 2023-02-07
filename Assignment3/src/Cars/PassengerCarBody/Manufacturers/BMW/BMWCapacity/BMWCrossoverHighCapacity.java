@@ -5,8 +5,9 @@ import Cars.PassengerCarBody.Manufacturers.BMW.BMWCrossover;
 
 public class BMWCrossoverHighCapacity extends BMWCrossover {
     public BMWCrossoverHighCapacity() {
+        super();
         capacity = new HighCapacity();
-        super.maxCapacity = capacity.maxCapacity;
-        super.minCapacity = capacity.minCapacity;
+        this.maxCapacity = capacity.maxCapacity;
+        this.minCapacity = capacity.minCapacity;
     }
 }

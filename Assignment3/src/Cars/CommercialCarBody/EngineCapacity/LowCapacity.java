@@ -1,8 +1,8 @@
 package Cars.CommercialCarBody.EngineCapacity;
 
 public class LowCapacity extends Capacity {
-    @Override
-    protected void setCapacity(float capacity) {
-        super.setCapacity(capacity);
+    public LowCapacity() {
+        minCapacity = 2.0f;
+        maxCapacity = 4.0f;
     }
 }

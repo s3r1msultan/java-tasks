@@ -1,11 +1,11 @@
-package Cars.PassengerCarBody.Manufacturers.Volvo.VolvoCapacity;
+package Cars.PassengerCarBody.Manufacturers.Mercedes.MercCapacity;
 
 import Cars.PassengerCarBody.EngineCapacity.HighCapacity;
 import Cars.PassengerCarBody.EngineCapacity.MediumCapacity;
-import Cars.PassengerCarBody.Manufacturers.Volvo.VolvoSedan;
+import Cars.PassengerCarBody.Manufacturers.Mercedes.MercMiniVan;
 
-public class VolvoSedanMediumCapacity extends VolvoSedan {
-    public VolvoSedanMediumCapacity() {
+public class MercMiniVanMediumCapacity extends MercMiniVan {
+    public MercMiniVanMediumCapacity() {
         super();
         capacity = new MediumCapacity();
         this.maxCapacity = capacity.maxCapacity;

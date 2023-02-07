@@ -1,14 +1,6 @@
 package Cars.CommercialCarBody.EngineCapacity;
 
-public class Capacity {
-
-
-    protected float capacity;
-
-    protected void setCapacity(float capacity) {
-        this.capacity = capacity;
-    }
-    public float getCapacity() {
-        return capacity;
-    }
+abstract public class Capacity {
+    public float minCapacity;
+    public float maxCapacity;
 }
