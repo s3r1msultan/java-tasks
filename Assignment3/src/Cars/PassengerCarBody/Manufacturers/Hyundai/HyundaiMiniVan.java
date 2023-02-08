@@ -1,9 +1,9 @@
 package Cars.PassengerCarBody.Manufacturers.Hyundai;
 
-import Cars.PassengerCarBody.Sedan;
+import Cars.PassengerCarBody.MiniVan;
 
-public class HyundaiSedan extends Sedan {
-    public HyundaiSedan() {
+public class HyundaiMiniVan extends MiniVan {
+    public HyundaiMiniVan() {
         super();
         manufacturer = "Hyundai";
     }

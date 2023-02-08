@@ -4,7 +4,7 @@ import Cars.PassengerCarBody.Crossover;
 import Cars.PassengerCarBody.EngineCapacity.HighCapacity;
 
 public class BMWCrossover extends Crossover{
-    protected BMWCrossover() {
+    public BMWCrossover() {
         super();
         manufacturer = "BMW";
     }

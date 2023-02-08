@@ -1,7 +1,8 @@
 package Cars.CommercialCarBody;
 
-public class Van extends Body{
+public class Van extends CommercialCarBody {
     public Van() {
+        super();
         body = "Van";
     }
 }

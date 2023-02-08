@@ -1,13 +1,14 @@
 package Cars;
 
 abstract public class Car {
-    protected float engineCapacity;
     protected String manufacturer;
     private String fuel;
     private String color;
+    private String type;
+    private String model;
+    private float engineCapacity;
     private int year;
     private int mileage;
-
     public int getMileage() {
         return mileage;
     }
@@ -47,10 +48,25 @@ abstract public class Car {
     public void setYear(int year) {
         this.year = year;
     }
-    protected float getEngineCapacity() {
+    public float getEngineCapacity() {
         return engineCapacity;
     }
-    protected void setEngineCapacity(float engineCapacity) {
+    public void setEngineCapacity(float engineCapacity) {
         this.engineCapacity = engineCapacity;
+    }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }

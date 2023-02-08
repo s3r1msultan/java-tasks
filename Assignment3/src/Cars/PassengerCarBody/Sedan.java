@@ -1,6 +1,6 @@
 package Cars.PassengerCarBody;
 
-public class Sedan extends Body{
+public class Sedan extends PassengerCarBody {
     protected Sedan() {
         super();
         body = "Sedan";

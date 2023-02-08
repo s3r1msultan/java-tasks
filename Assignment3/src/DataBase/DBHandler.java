@@ -1,7 +1,6 @@
 package DataBase;
 
 import Cars.Car;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -24,11 +23,7 @@ public class DBHandler extends Configs {
         String query = "SELECT * FROM " + managersTable + " WHERE login='" + login + "'AND password='" + password + "';"; // query to get row with certain login and password
         Statement statement = connection.createStatement();
         ResultSet rst = statement.executeQuery(query);     // it stores result of execution the query
+
         return rst.next();    // this one tells us if we have such a manager
-    }
-
-    public void updateCars(ArrayList<Car> cars) {
-        Connection connection = getConnection();
-
     }
 }

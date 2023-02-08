@@ -1,6 +1,10 @@
 package Cars;
 
 abstract public class PassengerCar extends Car{
+    private String transmission;
+    public PassengerCar() {
+        setType("Passenger");
+    }
     public String getTransmission() {
         return transmission;
     }
@@ -9,5 +13,4 @@ abstract public class PassengerCar extends Car{
         this.transmission = transmission;
     }
 
-    protected String transmission;
 }

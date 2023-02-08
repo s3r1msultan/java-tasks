@@ -20,9 +20,7 @@ public class Commands {
         System.out.println("What do you want to do?");
         System.out.println("1 - Add a car");
         System.out.println("2 - Remove a car");
-        System.out.println("3 - Get information about certain car");
-        System.out.println("4 - Get information about all cars");
-        System.out.println("5 - Get information about customers");
+        System.out.println("3 - Get information about all cars");
         System.out.println("0 - Go back");
         separator();
     }
