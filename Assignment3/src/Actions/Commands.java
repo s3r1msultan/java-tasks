@@ -38,7 +38,17 @@ public class Commands {
         System.out.println("0 - Go back");
         separator();
     }
-
+    public void choosingCriteria() {
+        separator();
+        System.out.println("Filter menu");
+        System.out.println("Which criteria do you want to choose a car by?");
+        System.out.println("1. By type of car");
+        System.out.println("2. By body of car");
+        System.out.println("3. By brand of car");
+        System.out.println("4. By engine capacity of car");
+        System.out.println("5. Go back");
+        separator();
+    }
     public void choosingTypeOfCar() {
         separator();
         System.out.println("Type of car menu");
@@ -49,7 +59,7 @@ public class Commands {
         separator();
     }
 
-    public void choosingPassengerBrandOfCar() {
+    public void choosingBrandOfCar() {
         separator();
         System.out.println("Passenger brand menu");
         System.out.println("Which brand do you want?");
@@ -61,44 +71,46 @@ public class Commands {
         separator();
     }
 
-    public void choosingCommercialBrandOfCar() {
-        separator();
-        System.out.println("Commercial brand menu");
-        System.out.println("Which brand do you want?");
-        System.out.println("1 - Hyundai");
-        System.out.println("2 - Mercedes");
-        System.out.println("3 - Volvo");
-        System.out.println("0 - Go back");
-        separator();
-    }
-
-    public void choosingPassengerBody() {
+    public void choosingBodyOfCar() {
         separator();
         System.out.println("Passenger body menu");
         System.out.println("Which car body do you want?");
         System.out.println("1 - Crossover");
-        System.out.println("2 - Minivan");
+        System.out.println("2 - MiniVan");
         System.out.println("3 - Sedan");
         System.out.println("4 - SUV");
+        System.out.println("5 - Bus");
+        System.out.println("6 - Van");
+        System.out.println("7 - Refrigerator");
+        System.out.println("8 - Truck");
         System.out.println("0 - Go back");
         separator();
     }
 
-    public void choosingCommercialBody() {
+    public void choosingTypeOfEngineCapacity() {
         separator();
-        System.out.println("Commercial body menu");
-        System.out.println("Which car body do you want?");
-        System.out.println("1 - Bus");
-        System.out.println("2 - Van");
-        System.out.println("3 - Refrigerator");
-        System.out.println("3 - Truck");
+        System.out.println("Type of engine capacity menu");
+        System.out.println("Choose Capacity of Engine");
+        System.out.println("1 - Passenger");
+        System.out.println("2 - Commercial");
         System.out.println("0 - Go back");
         separator();
     }
 
-    public void choosingEngineCapacity() {
+    public void choosingPassengerEngineCapacity() {
         separator();
-        System.out.println("Engine capacity menu");
+        System.out.println("Passenger engine capacity menu");
+        System.out.println("Choose Capacity of Engine");
+        System.out.println("1 - High");
+        System.out.println("2 - Medium");
+        System.out.println("3 - Low");
+        System.out.println("0 - Go back");
+        separator();
+    }
+
+    public void choosingCommercialEngineCapacity() {
+        separator();
+        System.out.println("Commercial engine capacity menu");
         System.out.println("Choose Capacity of Engine");
         System.out.println("1 - High");
         System.out.println("2 - Medium");

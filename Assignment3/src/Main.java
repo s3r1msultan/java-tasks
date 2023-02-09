@@ -1,11 +1,8 @@
 import Actions.ActionsWithCar;
 import Actions.Commands;
 import Actions.Verification;
-import Cars.Car;
-import Cars.CommercialCar;
 import Cars.CommercialCarBody.CommercialCarBody;
 import Cars.PassengerCarBody.PassengerCarBody;
-import Cars.PassengerCarBody.Manufacturers.Mercedes.MercCrossover;
 import DataBase.CarsHandler;
 
 import java.sql.SQLException;
@@ -56,7 +53,81 @@ public class Main {
                     if (menuNum == 0) {
                         break;
                     } else if(menuNum == 1) {
-                        break;
+                        ActionsWithCar actionsWithCar = new ActionsWithCar(passengerCars, commercialCars, carsHandler);
+
+                        while(true) {
+                            menu.choosingCriteria();
+                            menuNum = cin.nextInt();
+                            if(menuNum == 0) {
+                                break;
+                            } else if(menuNum == 1) {
+                                while(true) {
+                                    menu.choosingTypeOfCar();
+                                    menuNum = cin.nextInt();
+                                    if(menuNum == 0) {
+                                        break;
+                                    } else if (menuNum == 1) {
+                                        actionsWithCar.getByType("Passenger");
+                                    } else if (menuNum == 2) {
+                                        actionsWithCar.getByType("Commercial");
+                                    }
+                                }
+                            } else if(menuNum == 2) {
+                                while(true) {
+                                    menu.choosingBodyOfCar();
+                                    menuNum = cin.nextInt();
+                                    if (menuNum == 0) {
+                                        break;
+                                    } else if (menuNum == 1) {
+                                        actionsWithCar.getByBody("Crossover");
+                                    } else if (menuNum == 2) {
+                                        actionsWithCar.getByBody("MiniVan");
+                                    } else if (menuNum == 3) {
+                                        actionsWithCar.getByBody("Sedan");
+                                    } else if (menuNum == 4) {
+                                        actionsWithCar.getByBody("SUV");
+                                    } else if (menuNum == 5) {
+                                        actionsWithCar.getByBody("Bus");
+                                    } else if (menuNum == 6) {
+                                        actionsWithCar.getByBody("Van");
+                                    } else if (menuNum == 7) {
+                                        actionsWithCar.getByBody("Refrigerator");
+                                    } else if (menuNum == 8) {
+                                        actionsWithCar.getByBody("Truck");
+                                    }
+                                }
+                            } else if(menuNum == 3) {
+                                while(true) {
+                                    menu.choosingBrandOfCar();
+                                    menuNum = cin.nextInt();
+                                    if (menuNum == 0) {
+                                        break;
+                                    } else if(menuNum == 1) {
+                                        actionsWithCar.getByBrand("BMW");
+                                    } else if(menuNum == 2) {
+                                        actionsWithCar.getByBrand("Hyundai");
+                                    } else if(menuNum == 3) {
+                                        actionsWithCar.getByBrand("Mercedes");
+                                    } else if(menuNum == 4) {
+                                        actionsWithCar.getByBrand("Volvo");
+                                    }
+                                }
+                            } else if(menuNum == 4) {
+                                while(true) {
+                                    menu.choosingTypeOfEngineCapacity();
+                                    menuNum = cin.nextInt();
+                                    if (menuNum == 0) {
+                                        break;
+                                    } else if(menuNum == 1) {
+                                        while(true) {
+                                            menu.choosingPassengerEngineCapacity();
+                                            menuNum = cin.nextInt();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
                     }
                 }
             }
