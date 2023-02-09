@@ -45,8 +45,7 @@ public class Commands {
         System.out.println("1. By type of car");
         System.out.println("2. By body of car");
         System.out.println("3. By brand of car");
-        System.out.println("4. By engine capacity of car");
-        System.out.println("5. Go back");
+        System.out.println("0. Go back");
         separator();
     }
     public void choosingTypeOfCar() {
@@ -83,38 +82,6 @@ public class Commands {
         System.out.println("6 - Van");
         System.out.println("7 - Refrigerator");
         System.out.println("8 - Truck");
-        System.out.println("0 - Go back");
-        separator();
-    }
-
-    public void choosingTypeOfEngineCapacity() {
-        separator();
-        System.out.println("Type of engine capacity menu");
-        System.out.println("Choose Capacity of Engine");
-        System.out.println("1 - Passenger");
-        System.out.println("2 - Commercial");
-        System.out.println("0 - Go back");
-        separator();
-    }
-
-    public void choosingPassengerEngineCapacity() {
-        separator();
-        System.out.println("Passenger engine capacity menu");
-        System.out.println("Choose Capacity of Engine");
-        System.out.println("1 - High");
-        System.out.println("2 - Medium");
-        System.out.println("3 - Low");
-        System.out.println("0 - Go back");
-        separator();
-    }
-
-    public void choosingCommercialEngineCapacity() {
-        separator();
-        System.out.println("Commercial engine capacity menu");
-        System.out.println("Choose Capacity of Engine");
-        System.out.println("1 - High");
-        System.out.println("2 - Medium");
-        System.out.println("3 - Low");
         System.out.println("0 - Go back");
         separator();
     }

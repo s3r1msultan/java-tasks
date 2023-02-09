@@ -112,19 +112,6 @@ public class Main {
                                         actionsWithCar.getByBrand("Volvo");
                                     }
                                 }
-                            } else if(menuNum == 4) {
-                                while(true) {
-                                    menu.choosingTypeOfEngineCapacity();
-                                    menuNum = cin.nextInt();
-                                    if (menuNum == 0) {
-                                        break;
-                                    } else if(menuNum == 1) {
-                                        while(true) {
-                                            menu.choosingPassengerEngineCapacity();
-                                            menuNum = cin.nextInt();
-                                        }
-                                    }
-                                }
                             }
                         }
 

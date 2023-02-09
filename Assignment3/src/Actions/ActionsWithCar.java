@@ -205,4 +205,45 @@ public class ActionsWithCar {
         }
     }
 
+    public void getByType(String type) {
+        for (int i = 0; i < passengerCars.size(); ++i) {
+            if(passengerCars.get(i).getType().equals(type)) {
+                System.out.println(passengerCars.get(i).toString());
+            }
+        }
+        for (int i = 0; i < commercialCars.size(); ++i) {
+            if(commercialCars.get(i).getType().equals(type)) {
+                System.out.println(commercialCars.get(i).toString());
+            }
+
+        }
+    }
+
+    public void getByBody(String body) {
+        for(int i = 0; i < passengerCars.size(); ++i) {
+            if (passengerCars.get(i).getBody().equals(body)) {
+                System.out.println(passengerCars.get(i).toString());
+            }
+        }
+        for (int i = 0; i < commercialCars.size(); ++i) {
+            if(commercialCars.get(i).getBody().equals(body)) {
+                System.out.println(commercialCars.get(i).toString());
+            }
+
+        }
+    }
+
+    public void getByBrand(String brand) {
+        for(int i = 0; i < passengerCars.size(); ++i) {
+            if (passengerCars.get(i).getManufacturer().equals(brand)) {
+                System.out.println(passengerCars.get(i).toString());
+            }
+        }
+        for (int i = 0; i < commercialCars.size(); ++i) {
+            if(commercialCars.get(i).getManufacturer().equals(brand)) {
+                System.out.println(commercialCars.get(i).toString());
+            }
+        }
+    }
 }
+
