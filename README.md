@@ -1,7 +1,8 @@
 Laptop work
 
-## SE-2210: Creating tetris using tkinter
+## SE-2210
 ### Participants: 
  - Yersultan Serimbetov
  - Adilkhan Yeslyambek
  - Taiyr Taishanov
+ - Ramazanov Eskendir
