@@ -33,6 +33,8 @@ public abstract class CommercialCarBody extends CommercialCar {
                 "Fuel type: " + getFuel() + '\n' +
                 "Color: " + getColor() + '\n' +
                 "Amount of seats: " + getNumOfSeats() + '\n' +
-                "Transmission: " + getTransmission() + '\n';
+                "Transmission: " + getTransmission() + '\n' +
+                "Price: " + getPrice() + '\n' +
+                "Amount: " + getAmount() + '\n';
     }
 }

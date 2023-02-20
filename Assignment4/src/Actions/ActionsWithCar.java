@@ -163,28 +163,34 @@ public class ActionsWithCar {
         System.out.print("Engine capacity: ");
         float engineCapacity = cin.nextFloat();
         System.out.print("Fuel: ");
-        String fuel = cin.next();
+        String fuel = cin.next().trim();
         System.out.print("Color: ");
-        String color = cin.next();
+        String color = cin.next().trim();
         System.out.print("Amount of seats: ");
         int numOfSeats = cin.nextInt();
         String transmission = "AWD";
         if (type.equals("Passenger")) {
             System.out.print("Transmission: ");
-            transmission = cin.next();
+            transmission = cin.next().trim();
         }
         System.out.print("Mileage: ");
         int mileage = cin.nextInt();
         System.out.print("Model: ");
-        String model = cin.next();
-        carsHandler.addCar(type, manufacturer, body, engineCapacity, fuel, color, numOfSeats, transmission, mileage, model);
+        String model = cin.next().trim();
+        System.out.print("Year: ");
+        String year = cin.next().trim();
+        System.out.print("Price: ");
+        long price = cin.nextInt();
+        System.out.print("Amount: ");
+        int amount = cin.nextInt();
+        carsHandler.addCar(type, manufacturer, body, engineCapacity, fuel, color, numOfSeats, transmission, mileage, model, year, price, amount);
         carsHandler.updatePassengerCars(passengerCars);
         carsHandler.updateCommercialCars(commercialCars);
         System.out.println("You have successfully added the car!!!");
     }
 
     public void remove() throws SQLException {
-        System.out.print("Enter the car id to delete");
+        System.out.println("Enter the car id to delete");
         System.out.print("ID: ");
         int id = cin.nextInt();
         carsHandler.removeCar(id);
@@ -192,34 +198,49 @@ public class ActionsWithCar {
         carsHandler.updateCommercialCars(commercialCars);
         System.out.println("You have successfully removed the car!!!");
     }
+    public void editInfo(String parameter) throws SQLException {
+        System.out.println("Enter the car id");
+        System.out.print("ID: ");
+        int id = cin.nextInt();
+        System.out.println("Enter your value");
+        System.out.print("Value: ");
+        String value = cin.next().trim();
+        carsHandler.editCar(id, parameter, value);
+        carsHandler.updatePassengerCars(passengerCars);
+        carsHandler.updateCommercialCars(commercialCars);
+        System.out.println("You have successfully edited the car info!!!");
+    }
 
-    public void getAllCars() {
+    public void getAllCars() throws SQLException {
         int k = 1;
-        for (int i = 0; i < passengerCars.size(); ++i) {
+        for (PassengerCarBody passengerCar : passengerCars) {
             System.out.println(k++);
-            System.out.println(passengerCars.get(i).toString());
+            System.out.println(passengerCar.toString());
         }
-        for (int i = 0; i < commercialCars.size(); ++i) {
+        for (CommercialCarBody commercialCar : commercialCars) {
             System.out.println(k++);
-            System.out.println(commercialCars.get(i).toString());
+            System.out.println(commercialCar.toString());
         }
+        carsHandler.updatePassengerCars(passengerCars);
+        carsHandler.updateCommercialCars(commercialCars);
     }
 
-    public void getByType(String type) {
-        for (int i = 0; i < passengerCars.size(); ++i) {
-            if(passengerCars.get(i).getType().equals(type)) {
-                System.out.println(passengerCars.get(i).toString());
+    public void getByType(String type) throws SQLException {
+        for (PassengerCarBody passengerCar : passengerCars) {
+            if (passengerCar.getType().equals(type)) {
+                System.out.println(passengerCar.toString());
             }
         }
-        for (int i = 0; i < commercialCars.size(); ++i) {
-            if(commercialCars.get(i).getType().equals(type)) {
-                System.out.println(commercialCars.get(i).toString());
+        for (CommercialCarBody commercialCar : commercialCars) {
+            if (commercialCar.getType().equals(type)) {
+                System.out.println(commercialCar.toString());
             }
-
         }
+        carsHandler.updatePassengerCars(passengerCars);
+        carsHandler.updateCommercialCars(commercialCars);
     }
 
-    public void getByBody(String body) {
+    public void getByBody(String body) throws SQLException {
         for (PassengerCarBody passengerCar : passengerCars) {
             if (passengerCar.getBody().equals(body)) {
                 System.out.println(passengerCar.toString());
@@ -229,11 +250,12 @@ public class ActionsWithCar {
             if (commercialCar.getBody().equals(body)) {
                 System.out.println(commercialCar.toString());
             }
-
         }
+        carsHandler.updatePassengerCars(passengerCars);
+        carsHandler.updateCommercialCars(commercialCars);
     }
 
-    public void getByBrand(String brand) {
+    public void getByBrand(String brand) throws SQLException {
         for (PassengerCarBody passengerCar : passengerCars) {
             if (passengerCar.getManufacturer().equals(brand)) {
                 System.out.println(passengerCar.toString());
@@ -244,6 +266,10 @@ public class ActionsWithCar {
                 System.out.println(commercialCar.toString());
             }
         }
+        carsHandler.updatePassengerCars(passengerCars);
+        carsHandler.updateCommercialCars(commercialCars);
     }
+
+
 }
 

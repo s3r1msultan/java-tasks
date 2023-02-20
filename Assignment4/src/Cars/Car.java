@@ -6,9 +6,11 @@ abstract public class Car {
     private String color;
     private String type;
     private String model;
+    private String year;
     private float engineCapacity;
-    private int year;
     private int mileage;
+    private long price;
+    private int amount;
     public int getMileage() {
         return mileage;
     }
@@ -41,11 +43,11 @@ abstract public class Car {
         this.color = color;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
     public float getEngineCapacity() {
@@ -68,5 +70,21 @@ abstract public class Car {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

@@ -21,8 +21,27 @@ public class Commands {
         System.out.println("1 - Add a car");
         System.out.println("2 - Remove a car");
         System.out.println("3 - Get information about all cars");
-        System.out.println("4 - Edit information about a car");
+        System.out.println("4 - Get certain cars");
+        System.out.println("5 - Edit information about a car");
         System.out.println("0 - Go back");
+        separator();
+    }
+
+    public void listOfParametersCommands() {
+        separator();
+        System.out.println("Parameters");
+        System.out.println("Choose parameter you want to edit");
+        System.out.println("1. Model");
+        System.out.println("2. Engine capacity");
+        System.out.println("3. Mileage");
+        System.out.println("4. Number of seats");
+        System.out.println("5. Fuel");
+        System.out.println("6. Color");
+        System.out.println("7. Year");
+        System.out.println("8. Transmission");
+        System.out.println("9. Price");
+        System.out.println("10. Amount");
+        System.out.println("0. Go back");
         separator();
     }
     
@@ -39,7 +58,7 @@ public class Commands {
         System.out.println("0 - Go back");
         separator();
     }
-    public void choosingCriteria() {
+    public void choosingCriteriaCommands() {
         separator();
         System.out.println("Filter menu");
         System.out.println("Which criteria do you want to choose a car by?");
@@ -49,7 +68,7 @@ public class Commands {
         System.out.println("0. Go back");
         separator();
     }
-    public void choosingTypeOfCar() {
+    public void choosingTypeOfCarCommands() {
         separator();
         System.out.println("Type of car menu");
         System.out.println("Which car do you want?");
@@ -59,7 +78,7 @@ public class Commands {
         separator();
     }
 
-    public void choosingBrandOfCar() {
+    public void choosingBrandOfCarCommands() {
         separator();
         System.out.println("Passenger brand menu");
         System.out.println("Which brand do you want?");
@@ -71,7 +90,7 @@ public class Commands {
         separator();
     }
 
-    public void choosingBodyOfCar() {
+    public void choosingBodyOfCarCommands() {
         separator();
         System.out.println("Passenger body menu");
         System.out.println("Which car body do you want?");

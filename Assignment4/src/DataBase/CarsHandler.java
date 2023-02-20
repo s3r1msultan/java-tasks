@@ -1,28 +1,7 @@
 package DataBase;
 import Cars.CommercialCarBody.CommercialCarBody;
-import Cars.CommercialCarBody.Manufacturers.Hyundai.HyundaiBus;
-import Cars.CommercialCarBody.Manufacturers.Hyundai.HyundaiRefrigerator;
-import Cars.CommercialCarBody.Manufacturers.Hyundai.HyundaiVan;
-import Cars.CommercialCarBody.Manufacturers.Mercedes.MercBus;
-import Cars.CommercialCarBody.Manufacturers.Mercedes.MercRefrigerator;
-import Cars.CommercialCarBody.Manufacturers.Mercedes.MercTruck;
-import Cars.CommercialCarBody.Manufacturers.Mercedes.MercVan;
-import Cars.CommercialCarBody.Manufacturers.Volvo.VolvoBus;
-import Cars.CommercialCarBody.Manufacturers.Volvo.VolvoRefrigerator;
-import Cars.CommercialCarBody.Manufacturers.Volvo.VolvoTruck;
-import Cars.PassengerCarBody.Manufacturers.BMW.BMWCrossover;
-import Cars.PassengerCarBody.Manufacturers.BMW.BMWSedan;
-import Cars.PassengerCarBody.Manufacturers.Hyundai.HyundaiCrossover;
-import Cars.PassengerCarBody.Manufacturers.Hyundai.HyundaiMiniVan;
-import Cars.PassengerCarBody.Manufacturers.Hyundai.HyundaiSedan;
-import Cars.PassengerCarBody.Manufacturers.Mercedes.MercMiniVan;
-import Cars.PassengerCarBody.Manufacturers.Mercedes.MercSUV;
-import Cars.PassengerCarBody.Manufacturers.Mercedes.MercSedan;
-import Cars.PassengerCarBody.Manufacturers.Volvo.VolvoCrossover;
-import Cars.PassengerCarBody.Manufacturers.Volvo.VolvoSedan;
 import Cars.PassengerCarBody.PassengerCarBody;
 
-import Cars.PassengerCarBody.Manufacturers.Mercedes.MercCrossover;
 import Factories.CarFactory.*;
 
 import java.sql.*;
@@ -64,9 +43,15 @@ public class CarsHandler extends DBHandler{
                 passengerCarBody.setTransmission(rst.getString(9));
                 passengerCarBody.setMileage(rst.getInt(10));
                 passengerCarBody.setModel(rst.getString(11));
+                passengerCarBody.setYear(rst.getString(12));
+                passengerCarBody.setPrice(rst.getLong(13));
+                passengerCarBody.setAmount(rst.getInt(14));
                 passengerCars.add(passengerCarBody);
             }
         }
+        rst.close();
+        statement.close();
+        connection.close();
     }
 
     public void updateCommercialCars(ArrayList<CommercialCarBody> commercialCars) throws SQLException {
@@ -103,16 +88,22 @@ public class CarsHandler extends DBHandler{
                 commercialCarBody.setNumOfSeats(rst.getInt(8));
                 commercialCarBody.setMileage(rst.getInt(10));
                 commercialCarBody.setModel(rst.getString(11));
+                commercialCarBody.setYear(rst.getString(12));
+                commercialCarBody.setPrice(rst.getLong(13));
+                commercialCarBody.setAmount(rst.getInt(14));
                 commercialCars.add(commercialCarBody);
             }
         }
+        rst.close();
+        statement.close();
+        connection.close();
     }
-    public void addCar(String type,String manufacturer, String body,
+    public void addCar(String type, String manufacturer, String body,
                        float engineCapacity, String fuel, String color,
                        int numOfSeats, String transmission, int mileage,
-                       String model) throws SQLException {
+                       String model, String year, long price, int amount) throws SQLException {
         Connection connection = getConnection();
-        String addCar = "INSERT INTO " + carsTable + " (type, manufacturer, body, engineCapacity, fuel, color, numOfSeats, transmission, mileage, model) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String addCar = "INSERT INTO " + carsTable + " (type, manufacturer, body, engineCapacity, fuel, color, numOfSeats, transmission, mileage, model, year, price, amount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         PreparedStatement preparedStatement = connection.prepareStatement(addCar);
         preparedStatement.setString(1, type);
         preparedStatement.setString(2, manufacturer);
@@ -124,7 +115,11 @@ public class CarsHandler extends DBHandler{
         preparedStatement.setString(8, transmission);
         preparedStatement.setInt(9, mileage);
         preparedStatement.setString(10, model);
+        preparedStatement.setString(11, year);
+        preparedStatement.setLong(12, price);
+        preparedStatement.setInt(13, amount);
         preparedStatement.executeUpdate();
+        preparedStatement.close();
         connection.close();
     }
 
@@ -133,6 +128,16 @@ public class CarsHandler extends DBHandler{
         String removeCar = "DELETE FROM " + carsTable + " WHERE "+ carsTable +".`id`=" + id + ";";
         PreparedStatement preparedStatement = connection.prepareStatement(removeCar);
         preparedStatement.executeUpdate();
+        preparedStatement.close();
+        connection.close();
+    }
+
+    public void editCar(int id, String parameter, String value) throws SQLException {
+        Connection connection = getConnection();
+        String editCar = "UPDATE " + carsTable + " SET `" + parameter + "`='" + value + "' WHERE "+ carsTable +".`id`=" + id + ";";
+        Statement statement = connection.createStatement();
+        statement.execute(editCar);
+        statement.close();
         connection.close();
     }
 }
